@@ -1,0 +1,15 @@
+GET http://127.0.0.1:8000/api/usuario
+
+### Guardar Usuario
+
+POST http://127.0.0.1:8000/api/usuario
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "cristian",
+    "email": "cristian@mail.com",
+    "password": "cristian54321"
+}
+
+
