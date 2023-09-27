@@ -24,5 +24,6 @@ Route::prefix("v1/auth")->group(function(){
 
 });
 
+// Hola Mundo
 
 Route::apiResource("usuario", UsuarioController::class);

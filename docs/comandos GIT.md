@@ -30,7 +30,7 @@ git remote add origin https://github.com/cchura94/back_laravel_react.git
 
 git add .
 
-git commit -m "Descripción del cambio de codigo"
+git commit -m "Laravel Base - Autenticación Api Rest 260923"
 
 git push origin master
 
