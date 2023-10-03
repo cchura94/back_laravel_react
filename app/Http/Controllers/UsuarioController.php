@@ -57,6 +57,9 @@ class UsuarioController extends Controller
     public function show(string $id)
     {
         // mostrar
+        $user = User::findOrFail($id);
+
+        return response()->json($user, 200);
     }
 
     /**
@@ -64,7 +67,21 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // validar
+        $request->validate([
+            "name" => "required",
+            "email" => "required|email|unique:users,email,$id"
+        ]);
         // modificar
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if($request->password){
+            $user->password = $request->password;
+        }
+        $user->update();
+
+        return response()->json(["message" => "Usuario Actualizado"], 201);
     }
 
     /**
@@ -73,5 +90,8 @@ class UsuarioController extends Controller
     public function destroy(string $id)
     {
         // eliminar
+        $user = User::findOrFail($id);
+        $user->delete();
+        return response()->json(["message" => "Usuario Eliminado"], 200);
     }
 }
