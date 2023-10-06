@@ -1,0 +1,30 @@
+GET http://127.0.0.1:8000/api/categoria
+
+### guardar
+POST http://127.0.0.1:8000/api/categoria
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre": "ROPA"
+}
+
+### mostrar
+GET http://127.0.0.1:8000/api/categoria/11
+Accept: application/json
+
+### modificar
+PUT http://127.0.0.1:8000/api/categoria/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre": "ROPA PARA TODOS"
+}
+### eliminar
+DELETE http://127.0.0.1:8000/api/categoria/1
+
+### lista propducto por categoria
+
+GET http://127.0.0.1:8000/api/categoria/2/lista-productos
+Accept: application/json
