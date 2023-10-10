@@ -27,11 +27,13 @@ Route::prefix("v1/auth")->group(function(){
 
 });
 
-// Hola Mundo
-Route::get("categoria/{id}/lista-productos", [CategoriaController::class, "categoriaListaProducto"]);
-
-Route::apiResource("usuario", UsuarioController::class);
-Route::apiResource("categoria", CategoriaController::class);
-Route::apiResource("producto", ProductoController::class);
-Route::apiResource("cliente", ClienteController::class);
-Route::apiResource("pedido", PedidoController::class);
+Route::middleware('auth:sanctum')->group(function(){
+    // Hola Mundo
+    Route::get("categoria/{id}/lista-productos", [CategoriaController::class, "categoriaListaProducto"]);
+    
+    Route::apiResource("usuario", UsuarioController::class);
+    Route::apiResource("categoria", CategoriaController::class);
+    Route::apiResource("producto", ProductoController::class);
+    Route::apiResource("cliente", ClienteController::class);
+    Route::apiResource("pedido", PedidoController::class);
+});  
