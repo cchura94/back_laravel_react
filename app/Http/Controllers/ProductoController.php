@@ -20,12 +20,12 @@ class ProductoController extends Controller
                                     ->orWhere('precio', 'like', '%'.$q.'%')
                                     ->orderBy('id', 'desc')
                                     ->with('categoria')
-                                    ->paginate(2);
+                                    ->paginate(5);
 
         }else{
             $productos = Producto::orderBy('id', 'desc')
                                     ->with('categoria')
-                                    ->paginate(2);
+                                    ->paginate(5);
         }
 
         return response()->json($productos);
