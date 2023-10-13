@@ -1,0 +1,18 @@
+GET http://127.0.0.1:8000/api/producto?page=1&q=TEC
+Accept: application/json
+Authorization: Bearer 25|mnqQYtHhc1A6IehADtswYwvdoNSWqkGgv5z3HC1oe84a2bd0
+
+
+### guardar
+
+POST http://127.0.0.1:8000/api/producto
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 27|CXGjbwO1dCtWM7iWFKQXJJlA83W0sJs9hkpKhY3zb5309d08
+
+{
+    "nombre": "MONITOR",
+    "categoria_id": 2,
+    "precio": 1470.98,
+    "stock": 5
+}
