@@ -15,7 +15,7 @@ class UsuarioController extends Controller
     public function index()
     {
         // listar
-        $usuarios = User::get(); // select * from users
+        $usuarios = User::paginate(10); // select * from users
         return response()->json($usuarios, 200);
     }
 

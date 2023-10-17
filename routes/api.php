@@ -31,6 +31,8 @@ Route::middleware('auth:sanctum')->group(function(){
     // Hola Mundo
     Route::get("categoria/{id}/lista-productos", [CategoriaController::class, "categoriaListaProducto"]);
     
+    Route::post("producto/{id}/actualizar-imagen", [ProductoController::class, "actualizarImagen"]);
+
     Route::apiResource("usuario", UsuarioController::class);
     Route::apiResource("categoria", CategoriaController::class);
     Route::apiResource("producto", ProductoController::class);
