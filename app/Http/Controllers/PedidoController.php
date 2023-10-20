@@ -14,7 +14,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::orderBy('id', 'desc')->paginate(10);
+        $pedidos = Pedido::with(["cliente", "productos", ])->orderBy('id', 'desc')->paginate(10);
         return response()->json($pedidos, 200);
     }
 
